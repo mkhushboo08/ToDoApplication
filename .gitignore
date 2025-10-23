@@ -31,3 +31,8 @@ build/
 
 ### VS Code ###
 .vscode/
+
+
+# Ignore Spring Boot properties with credentials
+$env:DB_USER="khushboobhagwat_db_user"
+$env:DB_PASSWORD="QmeHA9a0XfcOfAaJ"

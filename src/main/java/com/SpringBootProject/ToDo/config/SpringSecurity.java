@@ -20,9 +20,6 @@ import org.springframework.security.web.authentication.UsernamePasswordAuthentic
 public class SpringSecurity {
 
     @Autowired
-    private UserDetailServiceImpl userDetailServiceImpl;
-
-    @Autowired
     private JwtFilter jwtFilter;
 
     // end points to authenticate
@@ -42,16 +39,6 @@ public class SpringSecurity {
                 .addFilterBefore(jwtFilter, UsernamePasswordAuthenticationFilter.class);
         return http.build();
     }
-
-//    //username  password to authenticate
-//    @Bean
-//    public AuthenticationManager authenticationManager(HttpSecurity http)
-//            throws Exception {
-//        AuthenticationManagerBuilder builder = http.getSharedObject(AuthenticationManagerBuilder.class);
-//        builder.userDetailsService(userDetailServiceImpl)
-//                .passwordEncoder(passwordEnco());
-//        return builder.build();
-//    }
 
     //password encoding
     @Bean
